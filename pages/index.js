@@ -41,7 +41,7 @@ export default function Home() {
 				<div className={styles.headerContent}>
 					<img src="profile.jpg" />
 					<h1>👋 Welcome to my website!</h1>
-					<p>I'm an experienced & passionate full stack web developer, and I have made a variety of different web apps in my past, ranging from React to Vue and even Angular.</p>
+					<p>I&apos;m an experienced & passionate full stack web developer, and I have made a variety of different web apps in my past, ranging from React to Vue and even Angular.</p>
 				</div>
 				<div className={styles.socials}>
 					<a href="https://github.com/Dominic-Hoe">
