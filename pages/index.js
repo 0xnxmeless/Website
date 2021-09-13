@@ -2,17 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-import Ribbon from "../components/ribbon";
 
 export default function Home() {
     return (
         <div>
-			<Ribbon>
-				<a href="https://github.com/Dominic-Hoe/Website">
-					<FaGithub size={16} />
-					Fork me on GitHub!
-				</a>
-			</Ribbon>
 			<Head>
 				<title>Dominic Hoe | Developer</title>
 				<meta
