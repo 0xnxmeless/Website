@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { MdMail } from "react-icons/md";
 
 export default function Home() {
     return (
@@ -45,6 +46,9 @@ export default function Home() {
 					</a>
 					<a href="https://twitter.com/DominicHoe1">
 						<FaTwitter size={32} />
+					</a>
+					<a href="mailto:hello@domhoe.dev">
+						<MdMail size={32} />
 					</a>
 				</div>
 			</header>
