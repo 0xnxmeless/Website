@@ -29,7 +29,6 @@ export default function Home() {
 				/>
 				<meta property="og:type" content="website" />
 			</Head>
-			{/* Navbar here */}
 
 			<header className={styles.header}>
 				<div className={styles.headerContent}>
