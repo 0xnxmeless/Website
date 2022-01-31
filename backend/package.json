@@ -4,7 +4,9 @@
   "description": "The backend for my new portfolio website",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "dev": "npm run build; nodemon .",
+    "start": "node ."
   },
   "repository": {
     "type": "git",

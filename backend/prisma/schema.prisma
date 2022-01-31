@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  uuid      String      @unique @default(uuid())
+  username  String      @unique
+  password  String
+  projects  Project[]
+  education Education[]
+  contacts  Contact[]
+
+  @@map("users")
+}
+
+model Project {
+  id          Int      @unique @default(autoincrement())
+  uuid        String
+  user        User     @relation(fields: [uuid], references: [uuid])
+  name        String
+  summary     String
+  description String
+  repository  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  skills      Skill[]
+
+  @@map("projects")
+}
+
+model Skill {
+  id         Int      @unique @default(autoincrement())
+  project    Project? @relation(fields: [projectId], references: [id])
+  projectId  Int?
+  name       String   @unique
+  link       String
+  imageUrl   String
+  badgeColor String
+
+  @@map("skills")
+}
+
+model Contact {
+  id        Int     @unique @default(autoincrement())
+  uuid      String
+  user      User    @relation(fields: [uuid], references: [uuid])
+  title     String
+  text      String
+  link      String?
+  icon      String
+  iconColor String  @default("#fffff")
+
+  @@map("contacts")
+}
+
+model Education {
+  id            Int        @unique @default(autoincrement())
+  uuid          String
+  user          User       @relation(fields: [uuid], references: [uuid])
+  subject       String
+  studyLevel    StudyLevel @default(GCSE)
+  startDate     DateTime
+  endDate       DateTime?
+  location      String?
+  gradeAchieved String?
+
+  @@map("education")
+}
+
+model Session {
+  id        Int      @unique @default(autoincrement())
+  token     String
+  uuid      String
+  expiresAt DateTime
+
+  @@map("sessions")
+}
+
+enum StudyLevel {
+  GCSE
+  ALevel
+  Degree
+  PhD // one day, maybe!
+}
