@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "The backend for my new portfolio website",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dominic-Hoe/Website.git"
+  },
+  "keywords": [
+    "express",
+    "prisma",
+    "typescript",
+    "rest"
+  ],
+  "author": "Dominic-Hoe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dominic-Hoe/Website/issues"
+  },
+  "homepage": "https://github.com/Dominic-Hoe/Website#readme",
+  "dependencies": {
+    "@prisma/client": "^3.8.1",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "argon2": "^0.28.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "prisma": "^3.8.1",
+    "typescript": "^4.5.5"
+  }
+}
