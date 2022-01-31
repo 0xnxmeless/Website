@@ -77,7 +77,7 @@ model Education {
 
 model Session {
   id        Int      @unique @default(autoincrement())
-  token     String
+  token     String   @unique
   uuid      String
   expiresAt DateTime
 

@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import RootRouter from "./routes";
 
 const app = express();
 app.use(cookieParser());
@@ -15,6 +16,8 @@ app.use(
         ],
     })
 );
+
+app.use("/", RootRouter);
 
 export default function listen(port: number) {
     return new Promise<void>((resolve) => {
