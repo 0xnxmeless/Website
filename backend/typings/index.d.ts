@@ -6,5 +6,10 @@ declare global {
         InvalidSession = "InvalidSession",
         ExpiredSession = "ExpiredSession",
         SessionUserNotFound = "SessionUserNotFound",
+        InvalidRequestBody = "InvalidRequestBody",
+        MissingRequiredFields = "MissingRequiredFields",
+        InvalidCredentials = "InvalidCredentials",
+        LoginSuccess = "LoginSuccess",
+        LogoutSuccess = "LogoutSuccess",
     }
 }

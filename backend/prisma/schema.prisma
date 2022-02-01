@@ -11,36 +11,29 @@ datasource db {
 }
 
 model User {
-  uuid      String      @unique @default(uuid())
-  username  String      @unique
-  password  String
-  projects  Project[]
-  education Education[]
-  contacts  Contact[]
+  uuid     String @unique @default(uuid())
+  username String @unique
+  password String
 
   @@map("users")
 }
 
 model Project {
-  id          Int      @unique @default(autoincrement())
-  uuid        String
-  user        User     @relation(fields: [uuid], references: [uuid])
+  uuid        String   @unique @default(uuid())
   name        String
   summary     String
   description String
   repository  String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
-  skills      Skill[]
+  skills      String
 
   @@map("projects")
 }
 
 model Skill {
-  id         Int      @unique @default(autoincrement())
-  project    Project? @relation(fields: [projectId], references: [id])
-  projectId  Int?
-  name       String   @unique
+  uuid       String @unique @default(uuid())
+  name       String @unique
   link       String
   imageUrl   String
   badgeColor String
@@ -50,8 +43,6 @@ model Skill {
 
 model Contact {
   id        Int     @unique @default(autoincrement())
-  uuid      String
-  user      User    @relation(fields: [uuid], references: [uuid])
   title     String
   text      String
   link      String?
@@ -63,8 +54,6 @@ model Contact {
 
 model Education {
   id            Int        @unique @default(autoincrement())
-  uuid          String
-  user          User       @relation(fields: [uuid], references: [uuid])
   subject       String
   studyLevel    StudyLevel @default(GCSE)
   startDate     DateTime
