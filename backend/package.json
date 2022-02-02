@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Dominic-Hoe/Website#readme",
   "dependencies": {
-    "@prisma/client": "^3.8.1",
+    "@prisma/client": "^3.9.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
@@ -34,7 +34,7 @@
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "prisma": "^3.8.1",
+    "prisma": "^3.9.0",
     "typescript": "^4.5.5"
   }
 }
