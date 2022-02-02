@@ -29,10 +29,10 @@ router.post("/", User, async (req: Request, res: Response) => {
 
     if (imageUrl.length > 300)
         errors.push(ResponseMessage.SkillImageUrlTooLong);
-    
+
     if (badgeColor.length > 7)
         errors.push(ResponseMessage.SkillBadgeColorTooLong);
-    
+
     if (!badgeColorValidation.test(badgeColor))
         errors.push(ResponseMessage.InvalidSkillBadgeColor);
 
@@ -55,6 +55,7 @@ router.post("/", User, async (req: Request, res: Response) => {
     return res.json({
         success: true,
         code: ResponseMessage.SkillCreateSuccess,
+        data: skill,
     });
 });
 
