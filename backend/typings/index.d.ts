@@ -20,5 +20,16 @@ declare global {
         SkillCreateSuccess = "SkillCreateSuccess",
         SkillRetrieveSuccess = "SkillRetrieveSuccess",
         SkillDeleteSuccess = "SkillDeleteSuccess",
+        ContactTitleTooLong = "ContactTitleTooLong",
+        ContactTextTooLong = "ContactTextTooLong",
+        ContactLinkTooLong = "ContactLinkTooLong",
+        ContactIconTooLong = "ContactIconTooLong",
+        ContactIconColorInvalid = "ContactIconColorInvalid",
+        ContactCreateSuccess = "ContactCreateSuccess",
+        ContactRetrieveSuccess = "ContactRetrieveSuccess",
+        ContactDeleteSuccess = "ContactDeleteSuccess",
+        ContactUpdateSuccess = "ContactUpdateSuccess",
+        ContactNotFound = "ContactNotFound",
+        NoFieldsToUpdate = "NoFieldsToUpdate",
     }
 }
