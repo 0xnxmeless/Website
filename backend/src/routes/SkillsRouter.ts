@@ -59,4 +59,29 @@ router.post("/", User, async (req: Request, res: Response) => {
     });
 });
 
+router.get("/", async (req: Request, res: Response) => {
+    const skills = await prisma.skill.findMany();
+
+    return res.json({
+        success: true,
+        code: ResponseMessage.SkillRetrieveSuccess,
+        data: skills,
+    });
+});
+
+router.delete("/:uuid", User, async (req: Request, res: Response) => {
+    const { uuid } = req.params;
+
+    await prisma.skill.delete({
+        where: {
+            uuid,
+        },
+    });
+
+    return res.json({
+        success: true,
+        code: ResponseMessage.SkillDeleteSuccess,
+    });
+});
+
 export default router;

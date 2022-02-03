@@ -18,5 +18,7 @@ declare global {
         SkillBadgeColorTooLong = "SkillBadgeColorTooLong",
         InvalidSkillBadgeColor = "InvalidSkillBadgeColor",
         SkillCreateSuccess = "SkillCreateSuccess",
+        SkillRetrieveSuccess = "SkillRetrieveSuccess",
+        SkillDeleteSuccess = "SkillDeleteSuccess",
     }
 }
