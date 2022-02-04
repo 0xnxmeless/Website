@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx tsc",
     "dev": "npm run build; nodemon .",
-    "start": "node ."
+    "start": "node .",
+    "createUserAccount": "node dist/scripts/createUser.js"
   },
   "repository": {
     "type": "git",
@@ -29,13 +30,13 @@
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
-    "@types/prompt": "^1.1.2",
+    "@types/prompts": "^2.0.14",
     "argon2": "^0.28.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "prompt": "^1.2.1"
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "prisma": "^3.9.1",

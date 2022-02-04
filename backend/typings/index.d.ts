@@ -31,5 +31,14 @@ declare global {
         ContactUpdateSuccess = "ContactUpdateSuccess",
         ContactNotFound = "ContactNotFound",
         NoFieldsToUpdate = "NoFieldsToUpdate",
+        ProjectNameTooLong = "ProjectNameTooLong",
+        ProjectSummaryTooLong = "ProjectSummaryTooLong",
+        ProjectDescriptionTooLong = "ProjectDescriptionTooLong",
+        ProjectRepositoryTooLong = "ProjectRepositoryTooLong",
+        ProjectCreateSuccess = "ProjectCreateSuccess",
+        ProjectRetrieveSuccess = "ProjectRetrieveSuccess",
+        ProjectDeleteSuccess = "ProjectDeleteSuccess",
+        ProjectUpdateSuccess = "ProjectUpdateSuccess",
+        ProjectNotFound = "ProjectNotFound",
     }
 }

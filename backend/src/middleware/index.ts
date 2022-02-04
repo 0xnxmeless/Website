@@ -12,6 +12,33 @@ const ExplicitStrings = (req: Request, _res: Response, next: NextFunction) => {
     return next();
 };
 
+type FieldWithType = {
+    name: string;
+    type:
+        | "bigint"
+        | "boolean"
+        | "function"
+        | "number"
+        | "object"
+        | "string"
+        | "symbol"
+        | "undefined";
+};
+
+const ExplicitTypesOnFields = (fields: FieldWithType[]) => {
+    return (req: Request, res: Response, next: NextFunction) => {
+        if (!req.body) return next();
+
+        for (const field in fields) {
+            const fieldName = fields[field].name;
+            const fieldType = fields[field].type;
+
+            if (typeof req.body[fieldName] !== fieldType)
+                delete req.body[fieldName];
+        }
+    };
+};
+
 const User = async (req: Request, res: Response, next: NextFunction) => {
     const token = req.cookies.session;
 
@@ -84,4 +111,4 @@ const User = async (req: Request, res: Response, next: NextFunction) => {
     return next();
 };
 
-export { ExplicitStrings, User };
+export { ExplicitStrings, ExplicitTypesOnFields, User };
