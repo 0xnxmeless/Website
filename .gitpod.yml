@@ -1,6 +1,6 @@
 vscode:
   extensions:
-    - dnlytras.nord-wave
+    - arcticicestudio.nord-visual-studio-code
     - PKief.material-icon-theme
     - esbenp.prettier-vscode
     - Prisma.prisma
