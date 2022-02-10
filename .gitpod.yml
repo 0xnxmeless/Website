@@ -1,0 +1,7 @@
+vscode:
+  extensions:
+    - dnlytras.nord-wave
+    - PKief.material-icon-theme
+    - esbenp.prettier-vscode
+    - Prisma.prisma
+    - ms-azuretools.vscode-docker
