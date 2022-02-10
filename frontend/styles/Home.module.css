@@ -11,12 +11,15 @@
     flex-direction: row;
     align-items: center;
     margin: 0 40px;
-    justify-content: space-between;
+    justify-content: center;
+    height: 100%;
 }
 
 .navLinks {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    height: 100%;
     gap: 10px;
     font-size: 16px;
 }
@@ -38,32 +41,17 @@
 }
 
 .main {
-    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     text-align: center;
     color: #fff;
     min-height: 75vh;
     width: 100vw;
-    top: 0;
-    background: url(../public/background.webp);
-    clip-path: ellipse(100% 100% at 50% 0%);
 }
 
 .main h1 {
     font-size: 40px;
     margin-bottom: 0px;
-}
-
-@media screen and (max-width: 768px) {
-    .main {
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        clip-path: none;
-    }
 }
