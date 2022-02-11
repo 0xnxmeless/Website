@@ -43,7 +43,11 @@ const Home: NextPage = () => {
                 </nav>
             </nav>
             <main className={styles.main}>
-                <h1>👋</h1>
+                <h1>
+                    <code>
+                        console.log("Hello World!");
+                    </code>
+                </h1>
                 <p>
                     My name's Dom, I work on backend web APIs and tinker with
                     other web technologies from time to time.
@@ -52,6 +56,7 @@ const Home: NextPage = () => {
                     I'm 17 going on 18 and have particular interest in Docker,
                     Kubernetes & ASP.NET.
                 </p>
+                <p>Find out more about me, my projects and my range of skills below. Enjoy your stay!</p>
             </main>
         </div>
     );
