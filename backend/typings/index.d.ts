@@ -40,5 +40,6 @@ declare global {
         ProjectDeleteSuccess = "ProjectDeleteSuccess",
         ProjectUpdateSuccess = "ProjectUpdateSuccess",
         ProjectNotFound = "ProjectNotFound",
+        UserRetrieveSuccess = "UserRetrieveSuccess",
     }
 }

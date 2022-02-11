@@ -77,4 +77,15 @@ router.get("/logout", User, async (req: Request, res: Response) => {
     });
 });
 
+router.get("/me", User, async (req: Request, res: Response) => {
+    return res.json({
+        success: true,
+        data: {
+            username: req.user.username,
+            uuid: req.user.uuid,
+        },
+        code: ResponseMessage.UserRetrieveSuccess,
+    });
+});
+
 export default router;
