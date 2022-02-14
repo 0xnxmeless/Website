@@ -1,15 +1,22 @@
-import { Context, createContext, useState } from "react";
+import { Context, createContext, useContext, useState } from "react";
 
-export type User = {
-    username?: string;
-    uuid?: string;
+type User = {
+    username: string | unknown;
+    uuid: string | unknown;
 };
 
-export type UserObject = {
+interface IUserContext {
     user?: User;
+}
+
+const defaultState = {
+    user: {
+        username: null,
+        uuid: null,
+    },
 };
 
-export const UserContext: Context<any> = createContext(null);
+export const UserContext = createContext<IUserContext>(defaultState);
 
 export const UserProvider = ({ value, children }: any) => {
     return (
@@ -17,4 +24,4 @@ export const UserProvider = ({ value, children }: any) => {
     );
 };
 
-export const useUser = () => createContext(UserContext);
+export const useUser = () => useContext(UserContext);

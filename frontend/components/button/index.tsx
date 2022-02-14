@@ -1,15 +1,18 @@
-import { Component, ReactNode } from "react"
+import { ReactNode } from "react";
+import styles from "./Button.module.css";
 
-export type WithChildren<T = Record<string, unknown>> = T & Record<"children", ReactNode>;
+export type WithChildren<T = Record<string, unknown>> = T &
+    Record<"children", ReactNode>;
 
 type ButtonProps = {
     icon?: string;
-}
+};
 
 export default function Button({ children, icon }: WithChildren<ButtonProps>) {
     return (
-        <h1>
-            {/* TODO: Finish */}
-        </h1>
-    )
+        <div className={styles.button}>
+            {icon && <div className={styles.buttonIcon}>{icon}</div>}
+            {children}
+        </div>
+    );
 }

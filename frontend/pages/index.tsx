@@ -1,11 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
+import Navbar from "../components/navbar";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import Button from "../components/button";
+import { useUser } from "../components/user";
 
 const Home: NextPage = () => {
     const router = useRouter();
+    const { user } = useUser();
     return (
         <div className={styles.container}>
             <Head>
@@ -31,22 +34,10 @@ const Home: NextPage = () => {
                 <meta property="og:title" content="Dominic Hoe" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <nav className={styles.navRoot}>
-                <nav className={styles.navContainer}>
-                    <div className={styles.navLinks}>
-                        <Link href="/">Home</Link>
-                        <Link href="/">Skills</Link>
-                        <Link href="/">Projects</Link>
-                        <Link href="/">Contacts</Link>
-                        <Link href="/">Login</Link>
-                    </div>
-                </nav>
-            </nav>
+            <Navbar />
             <main className={styles.main}>
                 <h1>
-                    <code>
-                        console.log("Hello World!");
-                    </code>
+                    <code>console.log("Hello World!");</code>
                 </h1>
                 <p>
                     My name's Dom, I work on backend web APIs and tinker with
@@ -56,7 +47,11 @@ const Home: NextPage = () => {
                     I'm 17 going on 18 and have particular interest in Docker,
                     Kubernetes & ASP.NET.
                 </p>
-                <p>Find out more about me, my projects and my range of skills below. Enjoy your stay!</p>
+                <p>
+                    Find out more about me, my projects and my range of skills
+                    below. Enjoy your stay!
+                </p>
+                <Button>Learn More</Button>
             </main>
         </div>
     );
