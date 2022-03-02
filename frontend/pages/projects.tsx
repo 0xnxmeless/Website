@@ -1,14 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../components/navbar";
-import styles from "../styles/Home.module.css";
-import { useRouter } from "next/router";
-import Button from "../components/button";
-import { useUser } from "../components/user";
+import styles from "../styles/Projects.module.css";
 
-const Home: NextPage = () => {
-    const router = useRouter();
-    const { user } = useUser();
+const Projects: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
@@ -35,28 +30,9 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
-            <main className={styles.main}>
-                <h1>
-                    <code>console.log("Hello World!");</code>
-                </h1>
-                <p>
-                    My name's Dom, I work on backend web APIs and tinker with
-                    other web technologies from time to time.
-                </p>
-                <p>
-                    I'm 17 going on 18 and have particular interest in Docker,
-                    Kubernetes & ASP.NET.
-                </p>
-                <p>
-                    Find out more about me, my projects and my range of skills
-                    below. Enjoy your stay!
-                </p>
-                <Button onClick={() => router.push("/projects")}>
-                    Learn More
-                </Button>
-            </main>
+            <h1>Projects</h1>
         </div>
     );
 };
 
-export default Home;
+export default Projects;

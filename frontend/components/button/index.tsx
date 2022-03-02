@@ -6,11 +6,16 @@ export type WithChildren<T = Record<string, unknown>> = T &
 
 type ButtonProps = {
     icon?: string;
+    onClick?: any;
 };
 
-export default function Button({ children, icon }: WithChildren<ButtonProps>) {
+export default function Button({
+    children,
+    icon,
+    onClick,
+}: WithChildren<ButtonProps>) {
     return (
-        <div className={styles.button}>
+        <div className={styles.button} onClick={onClick}>
             {icon && <div className={styles.buttonIcon}>{icon}</div>}
             {children}
         </div>
