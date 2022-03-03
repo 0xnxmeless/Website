@@ -1,13 +1,16 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
+import Button from "../components/button";
+import Svg404 from "../components/undraw/404";
+import styles from "../styles/Error404.module.css";
 import Head from "next/head";
-import Navbar from "../components/navbar";
-import styles from "../styles/Projects.module.css";
 
-const Projects: NextPage = () => {
+const Error404: NextPage = () => {
+    const router = useRouter();
     return (
-        <div className={styles.container}>
+        <div className={styles.root}>
             <Head>
-                <title>Dominic Hoe - Projects</title>
+                <title>Dominic Hoe - Error 404</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -18,21 +21,22 @@ const Projects: NextPage = () => {
                     content="Dominic Hoe: developer, enthusiast and creator"
                 />
                 <meta
-                    name="description"
+                    property="description"
                     content="Dominic Hoe: developer, enthusiast and creator"
                 />
                 <meta
                     property="twitter:description"
                     content="Dominic Hoe: developer, enthusiast and creator"
                 />
-                <meta property="theme-color" content="#14bee0" />
-                <meta property="og:title" content="Dominic Hoe - Projects" />
+                <meta property="og:title" content="Dominic Hoe - Error 404" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar />
-            <h1>Projects</h1>
+            <Svg404 />
+            <h1>Page not found</h1>
+            <p>This page doesn't exist. Return to the home page?</p>
+            <Button onClick={() => router.push("/")}>Go Home</Button>
         </div>
     );
 };
 
-export default Projects;
+export default Error404;

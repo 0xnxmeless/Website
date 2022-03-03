@@ -9,11 +9,6 @@
     width: 100vw;
 }
 
-.main h1 {
-    font-size: 30px;
-    margin-bottom: 0px;
-}
-
 @media screen and (max-width: 768px) {
     .main {
         height: calc(100vh - 75px);

@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
+import styles from "../styles/Skills.module.css";
 import Head from "next/head";
 import Navbar from "../components/navbar";
-import styles from "../styles/Projects.module.css";
 
-const Projects: NextPage = () => {
+const Skills: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Dominic Hoe - Projects</title>
+                <title>Dominic Hoe - Skills</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -26,13 +26,13 @@ const Projects: NextPage = () => {
                     content="Dominic Hoe: developer, enthusiast and creator"
                 />
                 <meta property="theme-color" content="#14bee0" />
-                <meta property="og:title" content="Dominic Hoe - Projects" />
+                <meta property="og:title" content="Dominic Hoe - Skills" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
-            <h1>Projects</h1>
+            <h1>Skills</h1>
         </div>
     );
 };
 
-export default Projects;
+export default Skills;
