@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
-import styles from "./Button.module.css";
+import styles from "./Button.module.scss";
 
 export type WithChildren<T = Record<string, unknown>> = T &
     Record<"children", ReactNode>;
 
 type ButtonProps = {
-    icon?: string;
+    icon?: any;
     onClick?: any;
 };
 

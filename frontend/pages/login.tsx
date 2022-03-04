@@ -2,7 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Login.module.css";
 import Navbar from "../components/navbar";
+import Input from "../components/input";
+import { FaLock, FaLockOpen, FaUser } from "react-icons/fa";
+import { useState } from "react";
+import Button from "../components/button";
+
 const Login: NextPage = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     return (
         <div className={styles.container}>
             <Head>
@@ -29,7 +36,26 @@ const Login: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
-            <h1>Login</h1>
+            <div className={styles.cardContainer}>
+                <div className={styles.card}>
+                    <h1>Login</h1>
+                    <Input
+                        value={username}
+                        placeholder="Username"
+                        startIcon={<FaUser />}
+                        onChange={setUsername}
+                        type="text"
+                    />
+                    <Input
+                        value={password}
+                        onChange={setPassword}
+                        startIcon={<FaLock />}
+                        placeholder="Password"
+                        type="password"
+                    />
+                    <Button icon={<FaLockOpen />}>Login</Button>
+                </div>
+            </div>
         </div>
     );
 };

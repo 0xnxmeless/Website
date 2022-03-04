@@ -9,10 +9,22 @@
     margin: 5px 0;
     cursor: pointer;
     transition: 0.1s all ease-in-out;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+}
+
+.buttonIcon > svg {
+    color: #000;
+    transition: .1s all ease-in-out;
 }
 
 .button:hover {
     transition: 0.1s all ease-in-out;
     background-color: #302f34;
     color: rgb(224, 224, 224);
+    .buttonIcon > svg {
+        color: #e0e0e0;
+    }
 }
