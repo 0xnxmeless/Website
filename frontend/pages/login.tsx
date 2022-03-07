@@ -7,9 +7,24 @@ import { FaLock, FaLockOpen, FaUser } from "react-icons/fa";
 import { useState } from "react";
 import Button from "../components/button";
 
+export type LoginProps = {
+    username: string;
+    password: string;
+};
+
 const Login: NextPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState<Array<string>>([]);
+
+    const login = async ({ username, password }: LoginProps) => {
+        setErrors(["Login functionality not implemented yet"]);
+
+        setTimeout(() => {
+            setErrors([]);
+        }, 5000);
+        return;
+    };
     return (
         <div className={styles.container}>
             <Head>
@@ -38,6 +53,16 @@ const Login: NextPage = () => {
             <Navbar />
             <div className={styles.cardContainer}>
                 <div className={styles.card}>
+                    {errors.length > 0 ? (
+                        <ul className={styles.errors}>
+                            <p>The following errors occurred:</p>
+                            {errors.map((error: string) => (
+                                <li>{error}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <></>
+                    )}
                     <h1>Login</h1>
                     <Input
                         value={username}
@@ -53,7 +78,13 @@ const Login: NextPage = () => {
                         placeholder="Password"
                         type="password"
                     />
-                    <Button icon={<FaLockOpen />}>Login</Button>
+                    <Button
+                        icon={<FaLockOpen />}
+                        disabled={!username || !password}
+                        onClick={() => login({ username, password })}
+                    >
+                        Login
+                    </Button>
                 </div>
             </div>
         </div>

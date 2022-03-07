@@ -8,7 +8,26 @@
     border-radius: 6px;
     margin: 5px 0;
     cursor: pointer;
+    border: none;
     transition: 0.1s all ease-in-out;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+}
+
+.disabledButton {
+    background-color: #858585;
+    color: #000;
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 6px;
+    margin: 5px 0;
+    cursor: pointer;
+    border: none;
+    transition: .1s all ease-in-out;
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -17,7 +36,7 @@
 
 .buttonIcon > svg {
     color: #000;
-    transition: .1s all ease-in-out;
+    transition: 0.1s all ease-in-out;
 }
 
 .button:hover {

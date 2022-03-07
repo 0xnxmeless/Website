@@ -7,17 +7,24 @@ export type WithChildren<T = Record<string, unknown>> = T &
 type ButtonProps = {
     icon?: any;
     onClick?: any;
+    disabled?: boolean;
 };
 
 export default function Button({
     children,
     icon,
+    disabled,
     onClick,
 }: WithChildren<ButtonProps>) {
-    return (
-        <div className={styles.button} onClick={onClick}>
+    return disabled ? (
+        <button className={styles.disabledButton} disabled={true}>
             {icon && <div className={styles.buttonIcon}>{icon}</div>}
             {children}
-        </div>
+        </button>
+    ) : (
+        <button className={styles.button} onClick={onClick}>
+            {icon && <div className={styles.buttonIcon}>{icon}</div>}
+            {children}
+        </button>
     );
 }
