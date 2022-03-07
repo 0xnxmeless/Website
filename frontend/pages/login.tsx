@@ -56,8 +56,8 @@ const Login: NextPage = () => {
                     {errors.length > 0 ? (
                         <ul className={styles.errors}>
                             <p>The following errors occurred:</p>
-                            {errors.map((error: string) => (
-                                <li>{error}</li>
+                            {errors.map((error: string, index: number) => (
+                                <li key={index}>{error}</li>
                             ))}
                         </ul>
                     ) : (
