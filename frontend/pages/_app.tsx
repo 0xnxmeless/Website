@@ -4,7 +4,7 @@ import { useState } from "react";
 import { UserProvider } from "../components/user";
 
 export default function Application({ Component, pageProps }: AppProps) {
-    const [user, setUser] = useState(true);
+    const [user, setUser] = useState(null);
 
     return (
         <UserProvider value={{ user, setUser }}>
