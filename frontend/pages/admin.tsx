@@ -12,7 +12,7 @@ const Admin: NextPage = () => {
 
     useEffect(() => {
         if (!user) router.push("/");
-    }, []);
+    });
     return !user ? (
         <></>
     ) : (

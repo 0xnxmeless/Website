@@ -4,8 +4,10 @@ import styles from "../styles/Login.module.css";
 import Navbar from "../components/navbar";
 import Input from "../components/input";
 import { FaLock, FaLockOpen, FaUser } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../components/button";
+import { useUser } from "../components/user";
+import { useRouter } from "next/router";
 
 export type LoginProps = {
     username: string;
@@ -13,6 +15,12 @@ export type LoginProps = {
 };
 
 const Login: NextPage = () => {
+    const { user } = useUser();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (user) router.push("/");
+    });
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState<Array<string>>([]);
@@ -25,7 +33,9 @@ const Login: NextPage = () => {
         }, 5000);
         return;
     };
-    return (
+    return user ? (
+        <></>
+    ) : (
         <div className={styles.container}>
             <Head>
                 <title>Dominic Hoe - Login</title>
