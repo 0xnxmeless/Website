@@ -11,7 +11,7 @@ const Admin: NextPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-        if (!user) router.push("/");
+        if (!user) router.push("/login");
     });
     return !user ? (
         <></>
