@@ -20,6 +20,7 @@ declare global {
         SkillCreateSuccess = "SkillCreateSuccess",
         SkillRetrieveSuccess = "SkillRetrieveSuccess",
         SkillDeleteSuccess = "SkillDeleteSuccess",
+        SkillNotFound = "SkillNotFound",
         ContactTitleTooLong = "ContactTitleTooLong",
         ContactTextTooLong = "ContactTextTooLong",
         ContactLinkTooLong = "ContactLinkTooLong",

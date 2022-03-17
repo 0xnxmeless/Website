@@ -72,6 +72,18 @@ router.get("/", async (req: Request, res: Response) => {
 router.delete("/:uuid", User, async (req: Request, res: Response) => {
     const { uuid } = req.params;
 
+    const skill = await prisma.skill.findUnique({
+        where: {
+            uuid,
+        },
+    });
+
+    if (!skill)
+        return res.status(400).json({
+            success: false,
+            errors: [ResponseMessage.SkillNotFound],
+        });
+
     await prisma.skill.delete({
         where: {
             uuid,
