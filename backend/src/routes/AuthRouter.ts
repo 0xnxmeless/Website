@@ -59,6 +59,10 @@ router.post("/login", async (req: Request, res: Response) => {
     return res.json({
         success: true,
         code: ResponseMessage.LoginSuccess,
+        data: {
+            uuid: user.uuid,
+            username: user.username,
+        },
     });
 });
 
