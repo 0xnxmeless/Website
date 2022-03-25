@@ -42,6 +42,18 @@ router.post("/", User, async (req: Request, res: Response) => {
             errors,
         });
 
+    const skillLookup = await prisma.skill.findUnique({
+        where: {
+            name,
+        },
+    });
+
+    if (skillLookup)
+        return res.status(400).json({
+            success: false,
+            errors: [ResponseMessage.SkillNameTaken],
+        });
+
     const skill = await prisma.skill.create({
         data: {
             name,
@@ -59,7 +71,7 @@ router.post("/", User, async (req: Request, res: Response) => {
     });
 });
 
-router.get("/", async (req: Request, res: Response) => {
+router.get("/", async (_req: Request, res: Response) => {
     const skills = await prisma.skill.findMany();
 
     return res.json({

@@ -21,6 +21,7 @@ declare global {
         SkillRetrieveSuccess = "SkillRetrieveSuccess",
         SkillDeleteSuccess = "SkillDeleteSuccess",
         SkillNotFound = "SkillNotFound",
+        SkillNameTaken = "SkillNameTaken",
         ContactTitleTooLong = "ContactTitleTooLong",
         ContactTextTooLong = "ContactTextTooLong",
         ContactLinkTooLong = "ContactLinkTooLong",

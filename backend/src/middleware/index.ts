@@ -60,7 +60,7 @@ const User = async (req: Request, res: Response, next: NextFunction) => {
             errors: [ResponseMessage.InvalidSession],
         });
 
-    if (session.expiresAt > new Date()) {
+    if (new Date(session.expiresAt) < new Date()) {
         await prisma.session.delete({
             where: {
                 token,

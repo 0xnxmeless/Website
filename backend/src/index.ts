@@ -11,6 +11,7 @@ const verifyConnection = () =>
 
 verifyConnection().then(() => {
     console.log("Verified connection to database");
+    console.log(process.env.FRONTEND_URI);
     listen(parseInt(process.env.PORT!)).then(() => {
         console.log(
             `Backend website is up, running at http://localhost:${process.env
