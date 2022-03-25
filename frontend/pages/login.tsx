@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import type { CredentialProps } from "../api";
 import Head from "next/head";
 import styles from "../styles/Login.module.css";
 import Navbar from "../components/navbar";
@@ -8,11 +9,7 @@ import { useEffect, useState } from "react";
 import Button from "../components/button";
 import { useUser } from "../components/user";
 import { useRouter } from "next/router";
-
-export type LoginProps = {
-    username: string;
-    password: string;
-};
+import * as api from "../api";
 
 const Login: NextPage = () => {
     const { user } = useUser();
@@ -25,13 +22,17 @@ const Login: NextPage = () => {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState<Array<string>>([]);
 
-    const login = async ({ username, password }: LoginProps) => {
-        setErrors(["Login functionality not implemented yet"]);
+    const login = async ({ username, password }: CredentialProps) => {
+        const data = await api.login({ username, password }).catch((err) => {
+            if (err.response && err.response.data && err.response.data.errors)
+                err.response.data.errors.map((error: string) =>
+                    setErrors([...errors, error])
+                );
 
-        setTimeout(() => {
-            setErrors([]);
-        }, 5000);
-        return;
+            setTimeout(() => setErrors([]), 5000);
+        });
+
+        alert(data.code);
     };
     return user ? (
         <></>
