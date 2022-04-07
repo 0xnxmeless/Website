@@ -15,8 +15,7 @@ type RequestProps = {
 const request = ({ endpoint, method, body }: RequestProps) =>
     new Promise<any>(async (resolve, reject) => {
         try {
-            const baseURL =
-                `http://localhost:3001/`;
+            const baseURL = `https://3001-dominichoe-website-rc4scw4sigk.ws-eu38.gitpod.io`;
 
             const { data } = await Axios({
                 url: `${baseURL}${endpoint}`,

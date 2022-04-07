@@ -5,14 +5,14 @@ import styles from "../styles/Login.module.css";
 import Navbar from "../components/navbar";
 import Input from "../components/input";
 import { FaLock, FaLockOpen, FaUser } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Button from "../components/button";
 import { useUser } from "../components/user";
 import { useRouter } from "next/router";
 import * as api from "../api";
 
 const Login: NextPage = () => {
-    const { user } = useUser();
+    const { user, setUser } = useUser();
     const router = useRouter();
 
     useEffect(() => {
@@ -21,6 +21,11 @@ const Login: NextPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState<Array<string>>([]);
+
+    const handleFormSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        login({ username, password });
+    }
 
     const login = async ({ username, password }: CredentialProps) => {
         const data = await api.login({ username, password }).catch((err) => {
@@ -32,7 +37,10 @@ const Login: NextPage = () => {
             setTimeout(() => setErrors([]), 5000);
         });
 
-        alert(data.code);
+        if (data.code == "LoginSuccess") {
+            setUser(data.data);
+            router.push("/admin");
+        }
     };
     return user ? (
         <></>
@@ -75,27 +83,29 @@ const Login: NextPage = () => {
                         <></>
                     )}
                     <h1>Login</h1>
-                    <Input
-                        value={username}
-                        placeholder="Username"
-                        startIcon={<FaUser />}
-                        onChange={setUsername}
-                        type="text"
-                    />
-                    <Input
-                        value={password}
-                        onChange={setPassword}
-                        startIcon={<FaLock />}
-                        placeholder="Password"
-                        type="password"
-                    />
-                    <Button
-                        icon={<FaLockOpen />}
-                        disabled={!username || !password}
-                        onClick={() => login({ username, password })}
-                    >
-                        Login
-                    </Button>
+                    <form onSubmit={handleFormSubmit}>
+                        <Input
+                            value={username}
+                            placeholder="Username"
+                            startIcon={<FaUser />}
+                            onChange={setUsername}
+                            type="text"
+                        />
+                        <Input
+                            value={password}
+                            onChange={setPassword}
+                            startIcon={<FaLock />}
+                            placeholder="Password"
+                            type="password"
+                        />
+                        <Button
+                            icon={<FaLockOpen />}
+                            disabled={!username || !password}
+                            type="submit"
+                        >
+                            Login
+                        </Button>
+                    </form>
                 </div>
             </div>
         </div>

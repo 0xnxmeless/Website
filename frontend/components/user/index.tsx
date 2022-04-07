@@ -12,6 +12,7 @@ type UserProviderProps = {
 
 interface IUserContext {
     user?: User;
+    setUser?: any;
 }
 
 const defaultState = {

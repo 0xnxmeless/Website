@@ -13,7 +13,7 @@ export default function Application({ Component, pageProps }: AppProps) {
 
             if (data && data.code && data.code == "UserRetrieveSuccess")
                 setUser(data.data);
-        }
+        };
 
         fetchData();
     });

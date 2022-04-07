@@ -20,3 +20,11 @@
     gap: 10px;
     border-radius: 8px;
 }
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
