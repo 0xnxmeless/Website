@@ -55,9 +55,8 @@ model Contact {
 }
 
 model Education {
-  id            Int        @unique @default(autoincrement())
+  id            Int       @unique @default(autoincrement())
   subject       String
-  studyLevel    StudyLevel @default(GCSE)
   startDate     DateTime
   endDate       DateTime?
   location      String?
@@ -75,9 +74,14 @@ model Session {
   @@map("sessions")
 }
 
-enum StudyLevel {
-  GCSE
-  ALevel
-  Degree
-  PhD // one day, maybe!
+model Post {
+  uuid      String   @unique @default(uuid())
+  title     String
+  content   String
+  author    String // Will be the user's UUID
+  thumbnail String? // This should contain an image URL that gets rendered on the frontend
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("posts")
 }

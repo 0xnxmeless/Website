@@ -1,6 +1,5 @@
 import { Router, Request, Response } from "express";
 import prisma from "../db";
-import { Skill } from "@prisma/client";
 import { User, ExplicitTypesOnFields } from "../middleware";
 
 const router = Router();

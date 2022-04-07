@@ -43,5 +43,14 @@ declare global {
         ProjectUpdateSuccess = "ProjectUpdateSuccess",
         ProjectNotFound = "ProjectNotFound",
         UserRetrieveSuccess = "UserRetrieveSuccess",
+        PostTitleTooLong = "PostTitleTooLong",
+        PostContentTooLong = "PostContentTooLong",
+        PostThumbnailTooLong = "PostThumbnailTooLong",
+        PostNotFound = "PostNotFound",
+        PostRetrieveSuccess = "PostRetrieveSuccess",
+        PostCreateSuccess = "PostCreateSuccess",
+        PostUpdateSuccess = "PostUpdateSuccess",
+        PostDeleteSuccess = "PostDeleteSuccess",
+        NoPermission = "NoPermission",
     }
 }
