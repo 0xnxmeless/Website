@@ -39,6 +39,12 @@ After you've ensured that you have the tools listed above, and have configured t
 - Ensure that there are no errors when running by executing `docker logs backend`
 - If it says `Backend website is up, running at http://localhost:3000`, then you're finished.
 
+## Additional Instructions
+
+If you wish to actually manage the site, add content, et cetera, you will need a user account.
+
+To create a user account, firstly follow the steps mentioned previously, then run `npm run createUserAccount`. This will take you through a prompt to set your username and password. **Ensure you do not use a weak password. At current, there is no way to change passwords.**
+
 ### Troubleshooting
 
 If you encounter any issues when trying to run the server, please ensure that you have **configured PostgreSQL correctly.** Misconfigurations of PostgreSQL can cause Prisma to fail to connect to the database.

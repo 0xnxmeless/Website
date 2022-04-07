@@ -91,4 +91,6 @@ const deleteSkill = async (uuid: string) => {
     return data;
 };
 
+
+
 export { login, logout, getUser, getSkills, createSkill, deleteSkill };
